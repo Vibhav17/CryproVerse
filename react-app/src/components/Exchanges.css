@@ -1,0 +1,19 @@
+
+.ex-cards{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 5rem;
+    
+}
+
+.name{
+    width: 5rem;
+    
+}
+.price{
+    width: 5rem;
+}
+.rank{
+    width: 5rem;
+}
