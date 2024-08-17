@@ -7,10 +7,13 @@ import Header from './Header.jsx'
 import axios from 'axios'
 import   './Coins.css'
 import { Link } from 'react-router-dom'
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 const Coins = () => {
     const [loading,setLoading]=useState(true);
     const [coins,setCoins]=useState([]);
     const [currency,setCurrency]=useState('inr')
+    const [search,setSearch]=useState('')
     const currencySymbol = currency === 'inr' ? '₹':'$' 
     useEffect(()=>{
         const getCoinsData=async()=>{
@@ -26,6 +29,14 @@ const Coins = () => {
         {
             loading ? <Loader/> : <>
             <Header></Header>
+            <div className='search-bar' style={{marginLeft :'40px'}}>
+                <TextField id="outlined-basic" label="Coins" variant="outlined" type='text' placeholder='Search  Coin' style={{marginLeft :'50px',height :'2rem',width:'25rem',position:'absolute',top:'1%',left:'35%' ,paddingLeft :'5px'}} InputProps={{
+                style: {
+                    backgroundColor: 'white'
+                }
+            }} onChange={(e)=>setSearch(e.target.value)}></TextField>
+
+            </div>
             <div className='btns'>
                 <button onClick={()=>setCurrency('inr')} class="button-62" role="button">INR</button>
                 
@@ -34,7 +45,14 @@ const Coins = () => {
             
                 {
                     
-                    coins.map((item,idx)=>{
+                    coins.filter((data) => {
+                         if (search === '') {
+                                 return data;
+                        } else if (data.name.toLowerCase().includes(search.toLowerCase())) {
+                        return data;
+                            }
+                                })
+                .map((item,idx)=>{
                         let change=(item.price_change_percentage_24h);
                         let sign='+';
         
