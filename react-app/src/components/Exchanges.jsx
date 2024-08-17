@@ -26,7 +26,7 @@ const Exchanges = () => {
                 {
                     exchanges.map((item,idx)=>{
                         return(
-                            <div className='ex-cards'>
+                            <div key={idx} className='ex-cards'>
                     <div className='image'>
                         <img src={item.image} height={'80px'}></img>
                     </div>
