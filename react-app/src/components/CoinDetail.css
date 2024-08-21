@@ -1,36 +1,36 @@
 .coin-detail{
     padding-left: 10px;
-    padding-top: 100px;
+    padding-top: 80px;
   }
   .time{
       font-weight: bold;
-      font-size: 29px;
+      font-size: 20px;
   }
   
   .coin-image img{
-      margin-top: 60px;
+      margin-top: 30px;
       
   }
   
   .coin-name{
       font-weight: bold;
       font-size: 30px;
-      margin-top: 50px;
+      margin-top: 30px;
   }
   .coin-price{
       font-weight: bold;
-      font-size: 28px;
+      font-size: 26px;
       margin-top: 10px;
   }
   .coin-profit{
       margin-top: 10px;
       margin-left: 7px;
-      font-size: 29px;
+      font-size: 25px;
   }
   
   .market-rank{
       font-weight: bold;
-      font-size: 29px;
+      font-size: 25px;
       margin-top: 20px;
       margin-left: 5px;
   }
